@@ -91,7 +91,7 @@ chmod +x payload.macho
 Start Metasploit:
 
 ```bash
-msfconsole
+msfconsole -q
 ```
 
 Select the multi-handler module:
