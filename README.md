@@ -129,6 +129,12 @@ Start the handler:
 exploit
 ```
 
+or, 
+
+```text
+run
+```
+
 > **Important:** The handler and corresponding lab payload must use matching payload types, IP addresses, and ports.
 
 ---
