@@ -122,6 +122,7 @@ Once connected, use these commands to navigate your session:
 | `background` | Returns to the main `msf>` prompt while keeping the session active. | **Background Task** |
 | `download` | Transfers an authorized file *from* the remote host. | **Pull File** |
 | `upload` | Transfers an authorized file *to* the remote host. | **Push File** |
+| `screenshare` | See what victim is doing in computer | **Live Screen** |
 
 ---
 
