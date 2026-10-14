@@ -65,7 +65,7 @@ Replace `<YOUR_IP>` and `<YOUR_PORT>` in all examples below.
 ## ⚙️ Setting Up the Metasploit Handler
 Start your listener to catch incoming connections. **Ensure this matches your generated payload!**
 
-1.  **Launch:** `msfconsole`
+1.  **Launch:** `msfconsole -q`
 2.  **Select Module:** `use exploit/multi/handler`
 3.  **Configure**
     **For Staged:**
