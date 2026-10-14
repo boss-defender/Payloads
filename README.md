@@ -86,7 +86,7 @@ Start your listener to catch incoming connections. **Ensure this matches your ge
     
     windows:
     ```text
-    set PAYLOAD windows/meterpreter_reverse_tcp
+    set PAYLOAD windows/shell_reverse_tcp
     ```
     Linux:
     ```text
